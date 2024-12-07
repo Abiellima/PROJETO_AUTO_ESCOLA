@@ -3,23 +3,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Garantindo que o layout seja expansivo */
 }
 
-/* Cor de fundo e fonte */
+/* Configurações gerais */
 body {
     background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
-    color: #333;
+    font-family: 'Poppins', Arial, sans-serif;
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden; /* Evita que o conteúdo transborde */
+    overflow-x: hidden;
 }
 
 /* Cabeçalho */
 header {
-    width: 100%;
-    background-color: #b30007; /* Cor vermelha */
+
+    background-color: #b30007;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,20 +25,19 @@ header {
 }
 
 .logo-container {
-    background-color: #b30007; /* Cor vermelha */
     padding: 10px 0;
     width: 100%;
     text-align: center;
 }
 
 .logo {
-    width: 25vw; /* Tornando o logo expansivo */
-    max-width: 160px; /* Limitando tamanho máximo */
+    width: 25vw;
+    max-width: 160px;
     height: auto;
 }
 
 .nav-container {
-    background-color: #f8ce08; /* Cor amarela */
+    background-color: #f8ce08;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -49,46 +46,44 @@ header {
 }
 
 .nav-button {
-    margin: 0 2vw; /* Tamanho responsivo para margens */
+    margin: 0 2vw;
     padding: 10px 20px;
-    background-color: #f8ce08; /* Cor amarela */
-    color: #b30007; /* Cor vermelha */
+    background-color: #f8ce08;
+    color: #b30007;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 .nav-button:hover {
-    background-color: #FF6F00; /* Cor laranja */
+    background-color: #FF6F00;
+    color: #fff;
+}
+
+.nav-button:active {
+    transform: scale(0.98);
 }
 
 /* Seção Início */
 .inicio {
-    height: 100vh; /* Usando a altura da tela */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000; /* Cor de fundo para Início */
-}
-
-.inicio-content {
+    background-color: #000;
     text-align: center;
-    width: 90%; /* Tornando o conteúdo mais expansivo */
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
 }
 
 .inicio h1 {
-    font-size: 5vw; /* Usando unidade relativa para o título */
+    font-size: 5vw;
     font-weight: bold;
     color: #999;
 }
 
 .inicio p {
-    font-size: 2vw; /* Usando unidade relativa para o texto */
+    font-size: 2vw;
     margin: 10px 0;
     color: #FFF8E1;
 }
@@ -100,10 +95,16 @@ header {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 .cta-button:hover {
     background-color: #FF6F00;
+    color: #fff;
+}
+
+.cta-button:active {
+    transform: scale(0.98);
 }
 
 /* Seção Quem Somos */
@@ -113,22 +114,13 @@ header {
     justify-content: center;
     align-items: center;
     background-color: #000;
-}
-
-.quemsomos-content {
-    width: 100%; /* Ajusta o conteúdo para ser expansivo */
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 20px;
 }
 
 .image-slider {
     width: 100%;
-    height: 50vh; /* Ajuste para que a imagem ocupe metade da tela */
+    height: 50vh;
     display: flex;
     overflow: hidden;
 }
@@ -138,6 +130,7 @@ header {
     height: 100%;
     object-fit: cover;
     animation: slide 14s infinite;
+    padding: 5px;
 }
 
 @keyframes slide {
@@ -167,77 +160,232 @@ header {
     }
 }
 
-.quemsomos h1, .quemsomos h2 {
-    font-size: 4vw; /* Usando unidade de largura da tela */
-    text-align: center;
+.quemsomos h2 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    color: #fff;
 }
+.quemsomos h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    color: #fff;
+}
+
 
 /* Seção Serviços */
 .servicos {
-    height: auto;
+    position: relative;
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: auto; /* Ajusta a altura automaticamente */
+    min-height: 1323.33px; /* Altura mínima para desktops */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FFF8E1;
-    padding: 20px;
+    background: url('img_name/WhatsApp\ Image\ 2024-12-03\ at\ 23.37.12\ \(2\).jpeg') no-repeat center center; /* Fundo com imagem */
+    background-size: cover; /* Imagem cobre toda a área */
+}
+
+.servicos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(140, 1, 7); /* Sobreposição vermelha com opacidade */
+    opacity: 0.9;
+    z-index: 1; /* Camada abaixo do texto */
 }
 
 .servicos-content {
-    width: 90%;
-    height: auto;
-    padding: 10px 0;
+    position: relative;
+    z-index: 2; /* Texto acima do fundo */
+    width: 90%; /* Espaço para margens laterais */
+    max-width: 1348px; /* Largura máxima ideal para desktops */
     text-align: center;
+    color: white; /* Texto branco */
+    padding: 20px;
 }
+
+.servicos h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.servicos p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Responsividade para telas menores (celulares e tablets) */
+@media (max-width: 768px) {
+    .servicos {
+        min-height: auto; /* Remove altura fixa em dispositivos menores */
+        height: 100vh; /* Adapta para a altura da tela */
+    }
+
+    .servicos-content {
+        width: 95%; /* Usa mais largura em telas pequenas */
+        padding: 15px;
+    }
+
+    .servicos h2 {
+        font-size: 2em; /* Tamanho menor para títulos */
+    }
+
+    .servicos p {
+        font-size: 1em; /* Texto menor para melhor encaixe */
+    }
+}
+
+
+.folders {
+    display: grid; /* Usa um layout em grid */
+    grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas */
+    gap: 25px; /* Espaçamento entre os serviços */
+    justify-content: center; /* Centraliza o grid no centro da página */
+    margin-top: 50px;
+}
+
+.folder {
+    background-color: rgb(140, 1, 7) ;
+    border: 5px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    border-color: #fff;
+    text-align: center;
+    padding: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+
+
+.folder img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.folder h1 {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.folder p {
+    font-size: 1em;
+    color: #fff;
+}
+
+.folder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #000;
+    color: #fff;
+}
+@media (max-width: 768px) {
+    .folders {
+        grid-template-columns: repeat(2, 1fr); /* Mostra 2 colunas em telas menores */
+        gap: 20px;
+    }
+
+    .folder {
+        width: 100%; /* Ajusta a largura para ocupar a tela disponível */
+        height: auto; /* Ajusta a altura automaticamente */
+    }
+}
+
 
 /* Rodapé */
 footer {
-    background-color: #333; /* Cor preta */
+    background-color: #333;
     color: white;
     padding: 20px 0;
 }
 
-/* Conteúdo do rodapé principal */
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 90%;
     margin: 0 auto;
-    flex-wrap: wrap; /* Para que o conteúdo do rodapé seja flexível */
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-/* Logo no rodapé */
 .footer-logo-img {
-    width: 20vw;
-    max-width: 150px;
+    width: 50vw;
+    max-width: 200px;
     height: auto;
 }
 
-/* Links das redes sociais */
 .social-links {
     display: flex;
     gap: 20px;
-    align-items: center;
 }
 
 .social-icon img {
-    width: 5vw; /* Ajustando o tamanho dos ícones para tela pequena */
+    width: 3.5vw;
     height: auto;
+    transition: all 0.3s ease;
 }
 
-/* Informações Institucionais */
-.institutional-info, .contact-info {
+.social-icon img:hover {
+    transform: scale(1.2);
+}
+
+.contact-info {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 45%;
 }
 
-.institutional-info p, .contact-info p {
-    margin: 0;
+.contact-info h3 {
+    font-size: 1.5em; /* Tamanho do título */
+    font-weight: bold; /* Deixa o título em negrito */
+    color: #f8ce08; /* Cor amarela */
+    margin-bottom: 10px; /* Espaçamento inferior para o título */
 }
 
-/* Rodapé inferior */
+.institutional-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    text-align: center; /* Centraliza o texto dentro de cada elemento */
+    gap: 10px; /* Espaçamento entre o título e os parágrafos */
+}
+
+.institutional-info h3 {
+    font-size: 1.5em; /* Tamanho do título */
+    font-weight: bold; /* Deixa o título em negrito */
+    color: #f8ce08; /* Cor amarela */
+    margin-bottom: 10px; /* Espaçamento inferior para o título */
+}
+
+.institutional-info p {
+    font-size: 1em; /* Tamanho padrão para os parágrafos */
+    color: #fff; /* Cor branca */
+    margin: 0; /* Remove margens padrão dos parágrafos */
+}
+
 .footer-bottom {
     text-align: center;
     background-color: #222;
@@ -252,27 +400,27 @@ footer {
 .footer-bottom p a {
     color: #FFCC00;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .footer-bottom p a:hover {
     color: #FF6F00;
+    text-decoration: underline;
 }
 
-/* Responsividade para telas menores (até 768px de largura) */
+/* Responsividade para telas menores */
 @media (max-width: 768px) {
     .nav-container {
-        flex-direction: column; /* Menu se torna vertical */
+        flex-direction: column;
         align-items: center;
     }
 
     .nav-button {
         margin: 5px 0;
-        padding: 8px 10px;
-        font-size: 1em;
     }
 
     .logo {
-        width: 50vw; /* Logo maior no celular */
+        width: 50vw;
         max-width: 160px;
     }
 
@@ -280,18 +428,17 @@ footer {
         font-size: 5vw;
     }
 
-    .quemsomos h1, .quemsomos h2 {
+    .quemsomos h1 {
         font-size: 6vw;
     }
 
     .image-slider img {
-        height: 60vh; /* Ajustando para telas pequenas */
+        height: 60vh;
     }
 
     .footer-content {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
     }
 
     .social-icon img {
@@ -301,60 +448,4 @@ footer {
     .institutional-info, .contact-info {
         width: 100%;
     }
-}
-
-
-/* Estilização dos folders */
-.folders {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.folder {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-}
-
-.folder img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 15px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.folder h1 {
-    font-size: 1.2em;
-    color: #b30007;
-    margin-bottom: 10px;
-}
-
-.folder p {
-    font-size: 0.9em;
-    color: #555;
-}
-
-.folder:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    background-color: #f8ce08;
-    color: #b30007;
-}
-
-.folder:hover h1 {
-    color: #333;
-}
-
-.folder:hover p {
-    color: #333;
 }
